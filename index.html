@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Calculator</title>
+    <script src="main.js"></script>
+
+    <style>
+        body {
+            background-color: slateblue;
+            height: 75%;
+            width: 50%;
+            margin: 7% 100pt;
+            font-size: larger;
+        }
+
+        button {
+            margin-right: 8px;
+        }
+
+        fieldset {
+            border-color: green;
+            border-radius: 10px;
+            border-width: 4px;
+        }
+
+        input {
+            margin-right: 8px;
+        }
+
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form class="calculator">
+
+        <fieldset>
+            <legend>Inputs</legend>
+            <label for="first-number">First Number:</label>
+            <input id="first-Number" type="number" name="first-Number" placeholder="Enter First Num"
+                onkeyup="saveFirstNumber(this.value)">
+            <label for="second-number">Second Number:</label>
+            <input id="second-Number" type="number" name="second-Number" placeholder="Enter Second Num"
+                onkeyup="saveSecondNumber(this.value)">
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Operations</legend>
+            <button id="addition" type="button" name="Add" onclick="changeOperation(this.id)">
+                Add</button>
+            <button id="subtraction" type="button" name="Subtract" onclick="changeOperation(this.id)">
+                Subtract</button>
+            <button id="multiplication" type="button" name="Multiply" onclick="changeOperation(this.id)">
+                Multiply</button>
+            <button id="division" type="button" name="Divide" onclick="changeOperation(this.id)">
+                Divide</button>
+            <button id="modulus" type="button" name="Modulus" onclick="changeOperation(this.id)">
+                Modulus</button>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Solve</legend>
+            <button type="button" onclick="equals()">Solve</button>
+            <button type="reset">Clear</button>
+        </fieldset>
+        <br>
+
+    </form>
+
+    <div id="result">
+    </div>
+
+</body>
+
+</html>
